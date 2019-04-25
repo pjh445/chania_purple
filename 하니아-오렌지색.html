@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>레이아웃 코딩</title>
+	<style>
+	*			{margin:0;padding:0; box-sizing:border-box; }
+	html, body	{background:#ccc; font:12pt/1.8rem "나눔고딕";}
+	
+	/* 레아이웃 */
+	#layout		{max-width:1000px; background:#888; }
+	
+	/* 상단 */
+	header		{background:#F47D31; padding:20pt; }
+	header h1	{color:#fff;text-align:center;padding:10px 0;font-size:72px;}
+	
+	/* 전체 컨텐츠 */
+	#contents	{margin:20pt 0;}
+	
+	/*왼쪽 메뉴 */
+	nav>h2	{color:#fff; text-align:center; font-size:20px;
+			margin-bottom:10pt; text-align:center; }
+	nav a 	{display:block; text-decoration: none; 
+			padding:15px; border-bottom:3px solid #fff; 
+			color:#f47d31; font-weight:bold; font-size:1.2rem;
+			text-shadow:1px 0 2px black; text-align:center;}
+	nav a:hover	{background:#f47d31; color:#fff;}
+	 
+	/* 메인 */
+	main>article{background:#eee; margin:10px; 
+				border-radius: 10px;padding:15px;}
+	main>article h3{background: #f47d31;border-radius: 10px;padding: 5px 0;text-align: center;color:#fff;}
+	main>article>p{padding:10px 0;}
+	main>article>p.orange{background: #f47d31;border-radius: 10px;padding: 5px 0;text-align: center;color:#fff;}
+	
+	/* 오른쪽 부가정보 */
+	aside>h3	{color:#fff; text-align:center; 	
+				font-size:1.4rem; }
+    aside>p		{padding:10px; font-style:italic; color:#fff;}
+	
+	/* 하단 */
+    footer{background:#F47D31;text-align: center;padding:15px 0;}
+    footer>p{color:#fff;}
+	
+	/* 아이패드 */
+	@media all and (min-width:500px) {
+	
+			#layout	{margin:20pt auto; border:3px solid #fff;}			
+			#contents		{display:flex; flex-wrap:wrap; }
+			nav		{flex:1; margin-right:10pt;}
+			main	{flex:2.5;}
+			aside	{flex-basis:100%; text-align:center; }
+	}
+	/* PC */
+	@media all and (min-width:1000px) {
+	
+			#deco	{position:absolute; top:100px; left:-150px;
+					 padding:0 150px;
+					transform:rotate(-45deg);}			
+			#contents		{display:flex; flex-wrap:nowrap; }
+			nav		{flex:1;}
+			main	{flex:2;}
+			aside	{flex:1; text-align:left; }
+	}
+	</style>
+</head>
+<body>
+
+	<div id="layout">
+		<header>
+			<h1>하니아</h1>
+		</header>
+		<div id="contents">
+			<nav>
+				<h2>메뉴</h2>			 
+				<a href="#">비행편</a>
+				<a href="#">도시</a>
+				<a href="#">아일랜드</a>			
+			</nav>
+			<main>
+				<article>
+					<h3>도시</h3>
+					<p>Chania는 크레타 섬에있는 Chania 지역의 수도입니다. 도시는 구시 가지와 현대 도시의 두 부분으로 나눌 수 있습니다.</p>
+					<p>많은 신혼 부부들이 신혼여행지로 택한 지중해 휴양지 크레타의 하니아! 뿐만 아니라 베네치아 시대부터 이어져 그리스의 오랜 역사를 담고 있는 유서 깊은 곳입니다.</p>
+					<p class="orange">벤치에서 즐기는 노을풍경</p>
+				</article>
+				<article>
+					<h3>아일랜드</h3>
+					<p>도시는 섬 북쪽 해안과 접하고 있으며, 레팀노와는 서쪽으로 70km, 이라클리오와는 145km 떨어져 있습니다.</p>
+					<p class="orange">그리스 크리티 섬에서 두 번째로 큰 도시</p>
+				</article>
+			</main>
+			<aside>
+				<h3>Booking.com</h3>
+				<p class="asidecont">하니아 추천 숙소이 숙소는 해변에서 도보로 16분 거리에 있습니다. Porto Veneziano Hotel은 하니아(Chania)의 올드 베네치아 항구에 위치했습니다.</p>
+			</aside>
+		</div>
+		<footer>
+		<p>즐거운 여행 되십시오.</p>
+		</footer>
+	</div>
+	
+</body>
+</html>
