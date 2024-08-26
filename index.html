@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<title>도시: 하니아</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script>	
+$(document).ready(function(){ 
+	$("nav li").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+		$(this).children("nav").slideDown().parent().siblings().children("nav").slideUp();
+	});
+});	
+</script>
+<style>
+* { box-sizing: border-box; }
+html,body	{ font-family:"나눔고딕","맑은 고딕";}
+body {max-width:1000px; margin:auto; transition:all 0.5s;}
+header {
+			background-color: #9933cc; color: white; padding: 15px; text-align:center;
+			transition:all 0.5s;
+}
+nav ul {list-style-type: none; margin: 0; padding:0; }
+nav li {
+			padding: 8px; margin-bottom: 7px;  background-color: #33b5e5; color: white;
+			box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+			position:relative;
+}
+nav li:hover { background-color: #09c;}
+
+nav li::after {
+	content: "\002B";
+	color: red;
+	font-weight: bold;
+	float: right;
+	position: absolute;
+	top: 8px; right: 10px;
+}
+nav li.active::after {	
+	content: "\2212";
+	color: red;
+	font-weight: bold;
+	float: right;
+}
+
+nav a    {display:block; text-decoration:none; font-size:0.8rem; line-height:150%;}
+nav li>a {color:white; }
+nav li>nav {display:none; background:white; padding:5px; margin-top:5px;}
+nav nav>a  {color:#09c;}
+nav nav>a:hover {text-decoration:underline; padding-left:10px;}
+
+header+div {}
+header+div>* {padding: 15px; width: 100%; }
+
+aside>section {		
+    background-color: #33b5e5; padding: 15px; color: white;
+    text-align: center; font-size: 14px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		transition:all 0.5s;
+}
+footer {
+    background-color: #0099cc; color:white; text-align: center;
+    font-size: 12px; padding: 15px; transition:1s;
+}
+	
+@media(min-width: 500px) {
+		header+div	{display:flex; }
+		nav	{flex:1;}
+		main	{flex:3;}
+		aside	{flex:2;}
+
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>하니아</h1>
+</header>
+
+<div>
+	<nav>
+	  <ul>
+		<li>
+			<a href='#'>비행편</a>
+			<nav>
+				<a href="#">가가가가</a>
+				<a href="#">나나나나</a>
+				<a href="#">다다다다</a>
+			</nav>
+		</li>
+		<li>
+			<a href='#'>도시</a>
+			<nav>
+				<a href="#">가가가가</a>
+				<a href="#">나나나나</a>
+				<a href="#">다다다다</a>
+			</nav>
+		</li>
+		<li>
+			<a href='#'>아일랜드</a>
+			<nav>
+				<a href="#">가가가가</a>
+				<a href="#">나나나나</a>
+				<a href="#">다다다다</a>
+			</nav>
+		</li>
+		<li>
+			<a href='#'>음식</a>
+			<nav>
+				<a href="#">가가가가</a>
+				<a href="#">나나나나</a>
+				<a href="#">다다다다</a>		
+			</nav>
+		</li>
+	  </ul>
+	</nav>
+
+	<main>
+	  <h1>도시</h1>
+	  <p>Chania는 크레타 섬에있는 Chania 지역의 수도입니다. 도시는 구시 가지와 현대 도시의 두 부분으로 나눌 수 있습니다.</p>
+	</main>
+
+	<aside>
+	  <section>
+			<h2>어떤 나라입니까</h2>
+			<p>Chania는 크레타 섬의 한 도시입니다.</p>
+			<h2>어디에 있습니까?</h2>
+			<p>크레타 섬은 지중해의 그리스 섬입니다.</p>
+			<h2>어떤 방법으로 갈 수 있나요?</h2>
+			<p>유럽 각지에서 Chania 공항에 도착할 수 있습니다.</p>
+	  </section>
+	</aside>
+
+</div>
+
+<footer>
+  <p>브라우저 창 크기를 조정하여 내용이 크기 조정에 어떻게 반응하는지 확인하십시오.</p>
+</footer>
+
+</body>
+</html>
