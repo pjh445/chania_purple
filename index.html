@@ -14,26 +14,19 @@
 		const main = document.getElementsByTagName('main')[0];
 		const aNmain = [...a, main];
 
-		const navUp = () => {
-			nav.style.height = 0;
-			btn.textContent = "menu";
-			document.body.style.overflow = 'auto';
+		const upDown = () => {
+			
+			nav.style.height = nav.style.height === '70vh' ?  0 : '70vh';
+			btn.textContent  = btn.textContent === 'close' ? 'menu'  : 'close';
+
+			let x = document.body.style;
+			x.overflow = x.overflow === 'hidden' ? 'auto' : 'hidden';
 		}
 
-
-		btn.addEventListener("click" , ()=> {			
-			if( nav.style.height == "70vh" ) {
-					navUp();
-			} 
-			else  {
-					nav.style.height = "70vh";
-					btn.textContent = "close";
-					document.body.style.overflow = 'hidden';
-			}                         
-		});
+		btn.addEventListener("click" , upDown );			
 		
 		aNmain.forEach( i => {
-			i.addEventListener("click" ,navUp );			
+			i.addEventListener("click" , upDown );			
 		});
 
 	}); //end..................
@@ -86,12 +79,12 @@
 	footer span {font-size:0.8rem; color:#666;}
 
 	/* 위로 */
-	body>a	{position:fixed; right:calc(((100% - 500px) / 2 ) + 5px); bottom:10px; background:white; box-shadow:0 0 5px black; border-radius:5px;}
-	body>a:hover {background:aqua;}
+	#up	{position:fixed; right:calc(((100% - 500px) / 2 ) + 5px); bottom:10px; background:white; box-shadow:0 0 5px black; border-radius:5px;}
+	#up:hover {background:aqua;}
 
 	/*넓이가 500픽셀 이하인 기계장치*/
 	@media(max-width:500px) {
-			body>a {right:5px;}
+			#up {right:5px;}
 	}
 </style>
 </head>
@@ -159,7 +152,7 @@
 		<q>올림픽 신의 왕과 현대 유럽 문명의 출생지인 크레타 섬은 지중해의 보석입니다.</q>
 		<span>&#9866; 브룩 페렌체크</span>
 	</footer>
-	<a href="#top" class="material-symbols-outlined">stat_1</a>	
+	<a href="#top" class="material-symbols-outlined" id="up">stat_1</a>	
 </body>
 </html>
 
